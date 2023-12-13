@@ -1,29 +1,29 @@
 
 
-
 const input = document.querySelector('button');
 
-input.addEventListener('click' , function() {
+input.addEventListener('click' , function(){
 
-    const player = document.getElementById('user-number');
-    const cpu = document.getElementById('pc-number');
-    let numberUser = Math.floor(Math.random() * (6) + 1);
-    let numberPc = Math.floor(Math.random() * (6) + 1);
-    let winner = document.getElementById('result');
+    const userEmail = document.getElementById('user-email').value;
+    const database = ['davide@mail.com' , 'gianni@mail.com' , 'pino@mail.com', 'pippo@mail.com'];
+    const container = document.querySelector('main > div');
 
-    player.innerHTML = numberUser;
-    cpu.innerHTML = numberPc;
+    let result = `<h6> Inserire un'email valida </h6>`;
 
-    if(numberUser == numberPc){
-        winner.innerHTML = ('Pareggio');
+    for(let i = 0; i < database.length; i++){
         
-    }else if (numberUser > numberPc){
-        winner.innerHTML = ('Hai Vinto!!');
+        if (userEmail == database[i]){
 
-    }else {
-        winner.innerHTML = ('Hai Perso..');        
+            result =`<h6> Email inserita correttamente </h6> `;
+
+        }
 
     }
 
+    
+    const resultContainer = document.getElementById('validation');
+    resultContainer.innerHTML = result;
+ 
 }
 );
+
